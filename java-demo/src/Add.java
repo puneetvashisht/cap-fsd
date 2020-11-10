@@ -19,7 +19,7 @@ public class Add {
 		byte age = (byte)129.34;
 
 		int total = 0;
-		total += age;
+//		total = (total + age) * 5 ;
 		
 		float f = (float)24.34;
 		

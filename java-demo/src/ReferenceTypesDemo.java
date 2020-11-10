@@ -6,6 +6,8 @@ class Employee{
 }
 
 public class ReferenceTypesDemo {
+	
+	Employee emp;
 
 	public static void main(String[] args) {
 		

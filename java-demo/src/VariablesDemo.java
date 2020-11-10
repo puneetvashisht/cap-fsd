@@ -8,7 +8,8 @@ public class VariablesDemo {
 	static int z = 34;
 	
 	// Instance Variable
-	 int y = 4;
+	 int y;
+	 
 	
 	public void m1() {
 		int x = 34;
