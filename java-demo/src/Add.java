@@ -2,10 +2,16 @@
 public class Add {
 
 	public static void main(String[] args) {
-		/*System.out.println("Add two numbers");
-//		System.out.println(args[0]);
-//		System.out.println(args[1]);
-		*/
+		System.out.println("Add two numbers");
+		
+		double oper1 = Double.valueOf(args[0]); 
+		int oper2 = Integer.valueOf(args[1]);
+		
+		System.out.println(oper1 + oper2);
+		
+		System.out.println(args[0]);
+		System.out.println(args[1]);
+		
 		
 		// 1 byte = 8 bits = 2^7 to (2^7 - 1) = -128 to 127
 		
