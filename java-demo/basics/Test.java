@@ -3,3 +3,8 @@ public class Test{
         System.out.println("hello world!!");
     }
 }
+// Compilation
+// javac Test.java
+
+// Execute
+// java Test
