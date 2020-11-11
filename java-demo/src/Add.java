@@ -16,8 +16,14 @@ public class Add {
 		// 1 byte = 8 bits = 2^7 to (2^7 - 1) = -128 to 127
 		
 //		int for = 45;
-		byte age = (byte)129.34;
-
+//		byte age = (byte)129.34;
+		
+		byte age = 127;
+		System.out.println(age >> 2);
+		
+//		1111111 = 127
+//		0111111	= 63
+//		0011111 = 31
 		int total = 0;
 //		total = (total + age) * 5 ;
 		
@@ -26,7 +32,7 @@ public class Add {
 		boolean flag = false;
 		char startingLetter = 'P';
 		
-		System.out.println(age);
+//		System.out.println(age);
 		
 
 	}
