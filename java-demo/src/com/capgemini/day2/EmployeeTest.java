@@ -1,8 +1,20 @@
+
 package com.capgemini.day2;
 
-public class EmployeeTest {
+import java.lang.Object;
+
+public class EmployeeTest extends Object {
+	
+	public void m1() {
+		System.out.println();
+		
+	}
 
 	public static void main(String[] args) {
+		
+		new EmployeeTest().m1();
+		
+		
 		// Create objects using new keyword
 		Employee e1 = new Employee();
 //		e1.id = 434;

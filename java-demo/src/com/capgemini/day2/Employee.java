@@ -8,6 +8,8 @@ public class Employee {
 	private String name;
 	private double salary;
 	
+	static int count;
+	
 	// no argument / default constructor
 	public Employee() {
 		System.out.println("Initialize...");
