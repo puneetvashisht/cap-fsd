@@ -23,7 +23,12 @@ public class GCDemo {
 		
 		Employee emp1 = new Employee(13, "Ravi", 3434.34);
 //		emp1.count
+		emp1.setId(emp.getId() + 1);
 		System.out.println(++emp1.count);
+		
+		Employee emp2 = new Employee(7, "Ravi", 3434.34);
+//		emp1.count
+		System.out.println(++emp2.count);
 		
 		m1();
 		

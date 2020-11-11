@@ -1,12 +1,13 @@
 
 package com.capgemini.day2;
 
-import java.lang.Object;
+import static java.lang.Math.*;
+import java.util.Date;
 
 public class EmployeeTest extends Object {
 	
 	public void m1() {
-		System.out.println();
+		System.out.println(new Date());
 		
 	}
 
@@ -25,8 +26,10 @@ public class EmployeeTest extends Object {
 //		e1.salary= 23443.34;
 		e1.setSalary(34343.34);
 		
+		
+		
 		//mandatory
-		Employee e2 = new Employee(44, "Priya", 34343.34);
+		Employee e2 = new Employee(44, "Priya", round(34343.34));
 		double incrementedAmount = e2.incrementSalary(5000);
 		System.out.println(incrementedAmount);
 		
@@ -34,6 +37,10 @@ public class EmployeeTest extends Object {
 //		e2.id = 44;
 //		e2.name = "Priya";
 //		e2.salary= 33443.34;
+		
+//		e2.eligibility_age = 16;
+		
+		System.out.println(Employee.ELIGIBILITY_AGE);
 		
 		System.out.println(e2);
 //		System.out.println(e2.toString());
