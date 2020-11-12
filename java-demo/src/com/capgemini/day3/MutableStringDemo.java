@@ -10,7 +10,7 @@ public class MutableStringDemo {
 		// Not thread safe.. use it in single thread cases.. no synchronization overhead
 		StringBuilder sb = new StringBuilder("");
 		
-		sb.append("def");
+//		sb.append("def").reverse().append("test").replace(1, 3, "xyz");
 		
 		System.out.println("sb = " + sb.toString()); 
 		

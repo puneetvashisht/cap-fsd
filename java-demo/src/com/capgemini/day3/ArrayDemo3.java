@@ -10,6 +10,7 @@ public class ArrayDemo3 {
 		
 		
 		
+		
 		for(String s : str) {
 			System.out.println(s);
 		}
@@ -18,6 +19,8 @@ public class ArrayDemo3 {
 		
 		int result = Arrays.binarySearch(str, "Puneet");
 		System.out.println(result);
+		
+//		str[result];
 		
 		
 		for(String s : str) {
