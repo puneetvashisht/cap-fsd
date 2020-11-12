@@ -11,3 +11,15 @@
             - Variables, DataTypes, Keywords
             - Primitive & Reference Types
             - Instance Variable, Local Variable 
+    - Day 2 :
+            - Classes & Objects
+            - Constructors - initializing (mandatory)
+            - Setters - initializing (optional)
+            - toString() -- provides a string version of object
+            - equals() -- provide meaningful criteria for equality
+            - JavaBean/POJO - reusable class
+            - static - common things to an object
+            - final - makes constant
+            - Enums - know set of values
+            - GC - automated 
+            - Access Modifiers: public, private - default, protected

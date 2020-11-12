@@ -3,12 +3,14 @@ package com.capgemini.day2;
 import static java.lang.Math.round;
 
 class Fruit{
+	
+	Integer id;
 	String name;
 	String color;
 	
 	public boolean equals(Object obj) {
 		Fruit f = (Fruit) obj;
-        return this.name.equals(f.name);
+        return this.id.equals(f.id);
     }
 
 
@@ -44,6 +46,8 @@ public class EqualsDemo {
 		Employee e2 = new Employee(44, "Priya", round(34343.34));
 		
 		
+		
+		
 		String fruit1 = "apple";
 //		Fruit fruit1 = new Fruit("apple");
 //		fruit.setColor("red");
@@ -51,8 +55,8 @@ public class EqualsDemo {
 		
 		int x = 24;
 		
-		
-		if(fruit.equals(fruit1)) {
+//		if(e1.getName().equals(e2.getName())) {
+		if(e1.equals(e2)) {
 			System.out.println("Equal");
 		}
 		else {
