@@ -23,3 +23,15 @@
             - Enums - know set of values
             - GC - automated 
             - Access Modifiers: public, private - default, protected
+    - Day 3
+            - Wrapper Classes: Autoboxing, Auto unboxing
+            - Casting: Upcasting & Downcasting
+            - Object Methods: equals, toString
+            - System, Scanner, String
+            - Mutable-  StringBuilder (single thread) / StringBuffer (multi threaded)
+            - Array: fixed size, contigious
+            - Primitives: passed by value, Reference: pass by reference
+            - Utility Arrays ( sort, binarySearch, fill....)
+            - Regex (Pattern & Matcher)
+    - Day 4
+            Inheritance & Polymorphism
