@@ -14,7 +14,7 @@ public class WrapperDemo2 {
 		
 		// Upcasting 
 //		i = b;
-		Object o = new String("");
+		Object o = new Employee();
 		
 		// Downcasting .. explicit
 //		b = (byte)i;
