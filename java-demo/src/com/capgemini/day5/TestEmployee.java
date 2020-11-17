@@ -3,7 +3,19 @@ package com.capgemini.day5;
 public class TestEmployee {
 
 	public static void main(String[] args) {
-		Employee emp = new Employee(23, "Ravi", 34343.34);
+		
+		//create the composed object
+		Address address = new Address(45, "GK", "New Delhi");
+		
+		// pass it inside constructor
+		Employee emp = new Employee(23, "Ravi", 34343.34, 33, address);
+		
+		System.out.println(emp);
+		
+		Address newAddress = new Address(15, "Jangpura", "New Delhi");
+		emp.setAddress(newAddress);
+		
+		System.out.println(emp);
 		
 //		Worker emp = e;
 		

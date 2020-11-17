@@ -8,8 +8,34 @@ public class Employee implements Person, Worker {
 	private int age;
 	
 	
+	//has-a relationship
+	private Address address;
 	
 	
+	
+	
+	
+	
+	public Address getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+
+	public Employee(int id, String name, double salary, int age, Address address) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+		this.age = age;
+		this.address = address;
+	}
+
+
 	public int getAge() {
 		return age;
 	}
@@ -67,16 +93,24 @@ public class Employee implements Person, Worker {
 		this.salary += amount;
 	}
 
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+//	}
 
+	
 
 	@Override
 	public String commonMethod() {
 		
 		return "our common method implementation";
+	}
+
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", age=" + age + ", address=" + address
+				+ "]";
 	}
 
 
