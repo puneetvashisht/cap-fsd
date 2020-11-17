@@ -34,4 +34,11 @@
             - Utility Arrays ( sort, binarySearch, fill....)
             - Regex (Pattern & Matcher)
     - Day 4
-            Inheritance & Polymorphism
+            Inheritance
+                - Code reuse
+                - polymorphism (polymorphic arrays)
+            LSP - _______ is a __________
+            Overloading - compile time resolution
+            Overriding - run time resolution
+            Abstract classes - contains zero or more abstract methods
+            @Override - check method signature
