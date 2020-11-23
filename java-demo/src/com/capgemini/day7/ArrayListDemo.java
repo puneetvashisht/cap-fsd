@@ -19,6 +19,9 @@ public class ArrayListDemo {
 		myList.add(3 + "");
 		myList.add(1, "this will be second element");
 		
+		myList.remove(2);
+		myList.set(1, "this will be the replaced element");
+		
 		System.out.println(myList.get(1));
 		
 		for(String s : myList) {

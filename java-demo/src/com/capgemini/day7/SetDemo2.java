@@ -1,6 +1,6 @@
 package com.capgemini.day7;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class SetDemo2 {
@@ -9,7 +9,10 @@ public class SetDemo2 {
 		
 		// Hashing -- any implementation classes with Hash
 		// must implement the hashcode();
-		Set<Fruit> fruits = new HashSet<>();
+		// un-ordered collection
+//		Set<Fruit> fruits = new HashSet<>();
+		// insertion order ..
+		Set<Fruit> fruits = new LinkedHashSet<>();
 		
 		fruits.add(new Fruit("apple"));
 		
@@ -23,7 +26,7 @@ public class SetDemo2 {
 //		If two objects are not equal, they can still have the same hashcode.. not necessary though
 		
 		
-		System.out.println(fruits.contains(new Fruit("apple")));
+		System.out.println(fruits);
 
 	}
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class Fruit{
+class Fruit implements Comparable<Fruit>{
 
 	String name;
 
@@ -47,6 +47,13 @@ class Fruit{
 	@Override
 	public String toString() {
 		return "Fruit [name=" + name + "]";
+	}
+
+
+	@Override
+	public int compareTo(Fruit o) {
+		// TODO Auto-generated method stub
+		return this.name.compareTo(o.name);
 	}
 	
 	
