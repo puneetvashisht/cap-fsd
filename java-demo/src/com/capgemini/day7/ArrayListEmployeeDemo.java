@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.ListIterator;
 
 
 
@@ -28,6 +29,15 @@ public class ArrayListEmployeeDemo {
 		employees.add(new Employee(2, "Arijit", 24343.34));
 		employees.add(new Employee(14, "Saranya", 74343.34));
 		
+		
+//		ListIterator<Employee> iterator = employees.listIterator();
+//		while(iterator.hasNext()) {
+//			System.out.println(iterator.next());
+//			if(true) {
+//				iterator.remove();
+//			}
+//		}
+//		
 		Employee searchedEmployee = searchEmployee(employees, 2);
 		System.out.println(searchedEmployee);
 		
