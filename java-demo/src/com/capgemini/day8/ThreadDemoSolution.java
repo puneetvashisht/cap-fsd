@@ -43,7 +43,10 @@ public class ThreadDemoSolution {
 			
 			// starting thread
 			t.start();
-			threads.add(t);
+//			t.start();
+			
+//			t.join();
+//			threads.add(t);
 
 		}
 		
