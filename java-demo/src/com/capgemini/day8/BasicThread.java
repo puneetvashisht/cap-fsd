@@ -9,7 +9,7 @@ class MyRunnable implements Runnable{
 	
 }
 
-public class BasicThread {
+public class BasicThread{
 
 	public static void main(String[] args) {
 
