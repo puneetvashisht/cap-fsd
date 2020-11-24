@@ -1,11 +1,24 @@
 package com.capgemini.day8;
 
+import java.lang.reflect.Method;
+
+class Count {
+	static int i = 0;
+}
+
 class TestRunnable implements Runnable{
 	
 	int i = 0;
-	
-	public void incrementValue() {
+	// t1 this key obj1
+
+	public  synchronized void incrementValue() {
 		i++;
+		System.out.println(Thread.currentThread().getName());
+		System.out.println(i);
+	}
+//	t2 this obj2
+	public  synchronized void decrementValue() {
+		i--;
 		System.out.println(Thread.currentThread().getName());
 		System.out.println(i);
 	}
@@ -28,7 +41,15 @@ public class ThreadDemo3 {
 
 		TestRunnable runnable = new TestRunnable();
 		
-		for(int i=0;i<100000;i++) {	
+		// Class level object
+		System.out.println();
+		
+		Method methods[] = TestRunnable.class.getMethods();
+		for(Method m : methods) {
+			System.out.println(m.getName());
+		}
+		
+		for(int i=0;i<1;i++) {	
 			
 			Thread t = new Thread(runnable);
 			t.start();
