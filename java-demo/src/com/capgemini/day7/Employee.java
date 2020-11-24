@@ -37,6 +37,19 @@ public class Employee implements Comparable<Employee>{
 	
 	}
 	
+	public void incrementSalary() {
+		// deliberate delay
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		this.salary *= 1.1;
+	}
+	
 	
 	
 
