@@ -2,11 +2,20 @@ package com.capgemini.day6;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.capgemini.day5.Employee;
 
 public class FileReadDemo {
 
 	public static void main(String[] args) {
+		
+		Employee employeee[] = new Employee[4];
+		
+		ArrayList<Employee> employees = new ArrayList<>();
+//		employees.add(e)
+		
 		
 		File file = new File("/Users/puneet/work/trainings/cagemini-fsd/java-demo/src/sample.txt");
 		Scanner scanner = null;
