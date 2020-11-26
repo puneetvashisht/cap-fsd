@@ -41,6 +41,13 @@ public class EmployeeTest {
 				System.out.println(e);
 			}
 		}
+		
+//		4. Print employees conditionally..  salary > 40k
+		for(Employee e: employees) {
+			if(e.salary > 40000) {
+				System.out.println(e);
+			}
+		}
 
 	}
 	
