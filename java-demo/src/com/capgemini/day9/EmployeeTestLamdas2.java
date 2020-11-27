@@ -36,7 +36,8 @@ public class EmployeeTestLamdas2 {
 		System.out.println(employees);
 		
 //		2. Print employees conditionally.. starting letter of name is "P"
-		print(employees, (e)-> e.name.startsWith("P"), (e)->  System.out.println(e));
+//		print(employees, (e)-> e.name.startsWith("P"), (e)->  System.out.println(e));
+		print(employees, (e)-> e.name.startsWith("P"), System.out::println);
 //		3. Print employees conditionally.. starting letter of lastname is "R"
 		print(employees, (e)-> e.lastName.startsWith("R"), (e)->  System.out.println(e));
 		
