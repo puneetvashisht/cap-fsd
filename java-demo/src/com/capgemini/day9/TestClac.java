@@ -27,7 +27,7 @@ public class TestClac {
 //		Calc calc = new Calc();
 		int result = calc.sum(-3, -4);
 		
-		assertSame("-3 + -4 should be -7 ", -7, result);
+		assertSame("-3 + -4 should be -7 ", -9, result);
 	}
 
 }
