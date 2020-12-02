@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 
@@ -29,9 +33,39 @@ public class EmployeeTestLamdas {
 		
 //		1. Sort Employees by names
 		
+		Optional<Double> totalSalary = employees.stream()
+		.map(e-> e.salary)
+		.reduce((salary1, salary2)-> salary1+ salary2);
+		
+		System.out.println(totalSalary.get());
+//		.sorted()
+//		.filter(e->e.salary> 50000)
+//		.map(e->e.name)
+//		.forEach(System.out::println);
+//		.max((o1,o2)-> o1.salary.compareTo(o2.salary));
+//		.collect(Collectors.toList());
+		
+//		System.out.println(employeeWithMaxSalary.get());
+//		
+//		distinctEmployees.get(0).lastName;
+		
+		OptionalInt maxValue = IntStream.of().max();
+		if(maxValue.isPresent()) {
+			System.out.println(maxValue.getAsInt());
+		}
+		
+		
 		
 //		Collections.sort(employees,(Employee o1, Employee o2) ->  { return o1.name.compareTo(o2.name); } );
-		Comparator<Employee>  nameComparator = (o1, o2) -> o1.name.compareTo(o2.name);
+		
+		Comparator<Employee>  nameComparator = (o1, o2) ->  {
+			if(o1.name.equals(o2.name)) {
+				return o1.salary.compareTo(o2.salary);
+			}
+			return o1.name.compareTo(o2.name);
+			
+					
+		};
 		Collections.sort(employees,nameComparator);
 		System.out.println(employees);
 		

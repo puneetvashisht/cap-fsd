@@ -4,7 +4,7 @@ public class Employee {
 	int id;
 	String name;
 	String lastName;
-	double salary;
+	Double salary;
 	
 	
 	

@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestClac {
+public class TestClac2 {
 	Calc calc;
 	
 	@Before
@@ -30,6 +30,14 @@ public class TestClac {
 	public void testWithNegatieValues() {
 //		Calc calc = new Calc();
 		int result = calc.sum(-3, -4);
+		
+		assertSame("-3 + -4 should be -7 ", -9, result);
+	}
+	
+	@Test(expected = ArithmeticException.class)
+	public void testWithException() {
+//		Calc calc = new Calc();
+		int result = calc.sum(-3, 0);
 		
 		assertSame("-3 + -4 should be -7 ", -9, result);
 	}
