@@ -49,4 +49,10 @@
             multiple catch first | second  
             try with resource
                  
+    - JPA
+        Get required dependencies
+                Hibernate JPA
+                MySql Connector
+        Class convert into Entity
+        persistence.xml -- configuration file
             
