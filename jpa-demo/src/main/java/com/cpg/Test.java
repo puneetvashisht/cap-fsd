@@ -13,8 +13,7 @@ public class Test {
 		/* Create EntityManagerFactory */
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("test");
- 
-		
+	
 		
 		/* Create EntityManager */
 		EntityManager em = emf.createEntityManager();
