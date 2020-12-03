@@ -27,11 +27,19 @@ public class TestUser {
 
 //	@Test
 	public void testAddUser() {
-		User user = new User("ravi", "ravi@test.com", "testtest", 4.5, false);	
+		User user = new User("transaction", "ravi@test.com", "testtest", 4.5, false);	
 		//em.persist
 		em.getTransaction().begin();
+		
+		
 		em.persist(user);
+		if(user.active == false) {
+			em.getTransaction().rollback();
+		}
+		
 		em.getTransaction().commit();
+		
+		user.setEmail("t@t.com");
 			
 	}
 	
@@ -71,8 +79,19 @@ public class TestUser {
 		System.out.println(users);
 		
 	}
+//	select count(*) from User;
 	
 	@Test
+	public void testCountUsers() {
+		TypedQuery<Long> query = em.createNamedQuery("selectCount", Long.class);
+//		TypedQuery<Long> query = em.createQuery("SELECT count(u) FROM User u", Long.class);
+		Long count = query.getSingleResult();
+		System.out.println(count);
+		
+	}
+	
+	
+//	@Test
 	public void testFindActiveUsers() {
 		TypedQuery<User> query = em.createQuery("SELECT u FROM User u where u.active=:flag", User.class);
 		query.setParameter("flag", true);

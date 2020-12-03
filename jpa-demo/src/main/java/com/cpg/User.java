@@ -5,8 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Transient;
 
 @Entity
+@NamedQuery(name = "selectCount", query = "SELECT count(u) FROM User u")
 public class User {
 	
 	@Id
@@ -18,6 +21,9 @@ public class User {
 	String password;
 	double rating;
 	boolean active;
+	
+	@Transient
+	String confirmPassword;
 	
 	public User() {}
 	public User(String name, String email, String password, double rating, boolean active) {
