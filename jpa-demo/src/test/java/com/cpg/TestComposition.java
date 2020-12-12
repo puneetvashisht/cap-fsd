@@ -29,7 +29,7 @@ public class TestComposition {
 		em = emf.createEntityManager();
 	}
 
-//	@Test
+	@Test
 	public void testAddEmployees() {
 		Address add = new Address(32, "Jangpura", "Delhi");
 		Address add1 = new Address(2, "Malsi", "Dehradun");
@@ -37,7 +37,7 @@ public class TestComposition {
 		List<Address> addresses = new ArrayList<>();
 		addresses.add(add);addresses.add(add1);addresses.add(add2);
 		
-		Employee e = new Employee("Priya", "Negi", 20000.00, addresses);
+		Employee e = new Employee("Nidhi", "Arora", 20000.00, addresses);
 		
 //		e.setAddress(add);
 		
@@ -52,7 +52,7 @@ public class TestComposition {
 			
 	}
 	
-	@Test
+//	@Test
 	public void testFindEmployees() {
 		
 		Employee emp = em.find(Employee.class, 27);

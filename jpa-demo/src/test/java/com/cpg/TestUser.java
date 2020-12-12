@@ -1,5 +1,7 @@
 package com.cpg;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,42 +13,33 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.cpg.repos.UserRepository;
+
 public class TestUser {
 	
 	private EntityManager em;
 
+	UserRepository userRepository;
 	@Before
 	public void setUp() {
-		/* Create EntityManagerFactory */
-		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("test");
 	
-//		Create EntityManager
-		em = emf.createEntityManager();
+		
+		userRepository = new UserRepository();
 	}
 
 //	@Test
 	public void testAddUser() {
 		User user = new User("transaction", "ravi@test.com", "testtest", 4.5, false);	
 		//em.persist
-		em.getTransaction().begin();
-		
-		
-		em.persist(user);
-		if(user.active == false) {
-			em.getTransaction().rollback();
-		}
-		
-		em.getTransaction().commit();
-		
-		user.setEmail("t@t.com");
+		userRepository.add(user);
 			
 	}
 	
 //	@Test 
-	public void findUserById() {		
-		User foundUser = em.find(User.class, 6);
-		System.out.println(foundUser);
+	public void findUserById() {
+		
+		User user =userRepository.findById(6);
+		assertEquals("Name is eeual", "ravi", user.name);
 	}
 	
 //	@Test 
