@@ -1,19 +1,19 @@
 package com.cpg.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+import com.cpg.entities.User;
 import com.cpg.repos.RoleRepo;
 import com.cpg.repos.UserRepo;
 
-@Component
+@Service
 public class UserService {
 
 //	UserRepo repo = new UserRepo();
 
 	@Autowired
 	UserRepo repo;
-	
 	
 	RoleRepo roleRepo;
 	
@@ -46,10 +46,10 @@ public class UserService {
 
 
 
-	public void register() {
+	public void register(User user) {
 
 		System.out.println("Register method in service");
-		repo.save();
+		repo.save(user);
 		roleRepo.save();
 
 	}

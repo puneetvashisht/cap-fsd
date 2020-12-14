@@ -15,10 +15,26 @@ public class TestUserService {
 	public static void main(String[] args) {
 //		UserService service = new UserService();
 		
+		// after execution -- all objects ready
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		UserService service = context.getBean(UserService.class);
+//		ApplicationContext context = new FileSystemXmlApplicationContext("/Users/puneet/work/trainings/cagemini-fsd/spring-demo/src/main/resources/beans.xml");
+		String beanNames[] = context.getBeanDefinitionNames();
 		
-		service.register();
+		for(String beanName: beanNames) {
+			System.out.println(beanName);
+		}
+		
+//		UserRepo userRepo = context.getBean(UserRepo.class);
+		
+		UserService service = context.getBean(UserService.class);
+		UserService service1 = context.getBean(UserService.class);
+		UserService service2 = context.getBean(UserService.class);
+		
+		if(service1 == service2) {
+			System.out.println("Single object");
+		}
+		
+//		service.register();
 
 	}
 

@@ -1,9 +1,10 @@
 package com.cpg.repos;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class RoleRepo {
+	
 	
 	public void save() {
 		System.out.println("Insert role");
