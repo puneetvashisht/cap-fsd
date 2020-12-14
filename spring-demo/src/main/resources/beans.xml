@@ -21,7 +21,7 @@
 	<bean id="dataSource" 
       class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="url" value="jdbc:mysql://localhost:3306/capdb"/>
+      <property name="url" value="jdbc:mysql://localhost:3306/capdb?useSSL=false"/>
       <property name="username" value="root"/>
       <property name="password" value="rootroot"/>
    </bean>
@@ -39,7 +39,7 @@
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>

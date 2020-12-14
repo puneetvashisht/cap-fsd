@@ -2,6 +2,7 @@ package com.cpg.repos;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
@@ -16,11 +17,11 @@ public class UserRepo {
 	public UserRepo() {
 		
 	}
-	
+	@Transactional
 	public void save(User user) {
-		em.getTransaction().begin();
+//		em.getTransaction().begin();
 		em.persist(user);
-		em.getTransaction().commit();
+//		em.getTransaction().commit();
 		System.out.println("In repo.. saving user");
 	}
 

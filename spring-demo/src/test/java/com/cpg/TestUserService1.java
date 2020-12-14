@@ -20,7 +20,7 @@ public class TestUserService1 {
 	public void testRegister() {
 //		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 //		UserService service = context.getBean(UserService.class);
-		User user = new User("test@test.com", "testtest");
+		User user = new User("test1@test.com", "testtest");
 		
 		
 		service.register(user);
