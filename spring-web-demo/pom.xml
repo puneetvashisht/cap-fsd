@@ -8,10 +8,10 @@
 		<version>2.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.cpg</groupId>
-	<artifactId>spring-boot-demo</artifactId>
+	<groupId>com.cap</groupId>
+	<artifactId>spring-web-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-demo</name>
+	<name>spring-web-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -23,11 +23,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
 		<dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
