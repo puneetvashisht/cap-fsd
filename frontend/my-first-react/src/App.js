@@ -5,11 +5,18 @@ import Card from './components/Card'
 import Dropdown from './components/Dropdown'
 
 function App() {
+
+  let cusines = ['Continental', 'Mexican', 'Mughali']
+  let courses = ['React', 'Angular']
+
   return (
     <div className="App">
       <h2>Welcome to react</h2>
 
-      <Dropdown caption="Select Courses"></Dropdown>
+      <Dropdown title="Select Courses" courses={courses}></Dropdown>
+
+
+      <Dropdown title="Select Cuisines" courses={cusines}></Dropdown>
 
       {/* <Card title="React" summary="ui library from facebook"></Card>
        <Badge caption="Inbox" count="34"></Badge>

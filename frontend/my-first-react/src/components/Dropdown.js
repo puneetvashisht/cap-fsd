@@ -8,7 +8,7 @@ export default class Dropdown extends Component {
         super(props);
         console.log('In constructor', props)
         
-        this.state = {show: false, courses:['JS', 'JQuery', 'Angular', 'React']};
+        this.state = {show: false, courses:this.props.courses};
       }
 
     toggle(){
@@ -31,7 +31,7 @@ export default class Dropdown extends Component {
         return (
             <div className="dropdown">
             <button onClick={this.toggle.bind(this)} className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              {this.state.item? this.state.item: this.props.caption}     
+              {this.state.item? this.state.item: this.props.title}     
             </button>
             <ul className={this.state.show? 'dropdown-menu show': 'dropdown-menu'} aria-labelledby="dropdownMenuButton">
               {coursesList}
