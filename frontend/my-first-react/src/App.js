@@ -3,6 +3,8 @@ import './App.css';
 import Badge from './Badge2'
 import Card from './components/Card'
 import Dropdown from './components/Dropdown'
+import ViewEmployee from './components/ViewEmployee';
+import AddEmployee from './components/AddEmployee';
 
 function App() {
 
@@ -13,10 +15,15 @@ function App() {
     <div className="App">
       <h2>Welcome to react</h2>
 
-      <Dropdown title="Select Courses" courses={courses}></Dropdown>
+      <AddEmployee></AddEmployee>
+
+      <hr/>
+      <ViewEmployee></ViewEmployee>
+
+      {/* <Dropdown title="Select Courses" courses={courses}></Dropdown>
 
 
-      <Dropdown title="Select Cuisines" courses={cusines}></Dropdown>
+      <Dropdown title="Select Cuisines" courses={cusines}></Dropdown> */}
 
       {/* <Card title="React" summary="ui library from facebook"></Card>
        <Badge caption="Inbox" count="34"></Badge>
