@@ -13,6 +13,7 @@ public class Employee {
 	int id;
 	String name;
 	Double salary;
+	
 	public int getId() {
 		return id;
 	}

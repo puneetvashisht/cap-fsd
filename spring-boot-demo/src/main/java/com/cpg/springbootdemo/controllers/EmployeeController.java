@@ -14,6 +14,25 @@ import com.cpg.springbootdemo.entities.Employee;
 import com.cpg.springbootdemo.repos.EmployeeRepo;
 
 
+//class WorkoutActive{
+//	int workoutId;
+//	int userId;
+//	public int getWorkoutId() {
+//		return workoutId;
+//	}
+//	public void setWorkoutId(int workoutId) {
+//		this.workoutId = workoutId;
+//	}
+//	public int getUserId() {
+//		return userId;
+//	}
+//	public void setUserId(int userId) {
+//		this.userId = userId;
+//	}
+//	
+//	
+//}
+
 class Message{
 	String text;
 	
@@ -55,5 +74,13 @@ public class EmployeeController {
 	public List<Employee> fetchAllEmployees(){
 		return employeeRepo.findAll();
 	}
+	
+//	@GetMapping("/workoutactive")
+//	public List<Employee> assignWorkout(@RequestBody WorkoutActive workoutActive){
+//		workoutActive.getUserId();
+//		workoutActive.getWorkoutId();
+//		
+//		return employeeRepo.findAll();
+//	}
 
 }
