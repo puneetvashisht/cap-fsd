@@ -14,6 +14,7 @@ const initialState = {
 }
 
 // 2. Reducers for change the state in the store
+
 const store = createStore((state = initialState,  action)=>{
   console.log('Action fired..', action.type);
   switch(action.type){

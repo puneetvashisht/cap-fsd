@@ -11,8 +11,6 @@ class ViewEmployee extends Component {
     constructor(props) {
         super(props);
         console.log('In constructor', props)
-        
-        this.state = {employees: []};
       }
 
       componentDidMount() {
@@ -35,20 +33,21 @@ class ViewEmployee extends Component {
     //   }
 
       delete(id){
-
-        fetch('http://localhost:8080/api/employees/' + id, {
-        method: 'DELETE', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        }
-        })
-        .then(response => {
-           return response.json();
-        })
-            .then(data => {
-                console.log(data)
-                this.setState({message: data.text})
-            });
+          console.log('delete employee with id: ' + id)
+        this.props.onDeleteEmployee(id);
+        // fetch('http://localhost:8080/api/employees/' + id, {
+        // method: 'DELETE', // or 'PUT'
+        // headers: {
+        //     'Content-Type': 'application/json',
+        // }
+        // })
+        // .then(response => {
+        //    return response.json();
+        // })
+        //     .then(data => {
+        //         console.log(data)
+        //         this.setState({message: data.text})
+        //     });
 
       }
       
@@ -61,12 +60,18 @@ class ViewEmployee extends Component {
                     <td>{employee.id}</td>
                     <td><Link to={'/viewdetail/' + employee.id}>{employee.name}</Link></td>
                     <td>{employee.salary}</td>
+                    <td><button className="btn btn-danger" onClick={this.delete.bind(this, employee.id)}> X </button> </td>
                     </tr>
             )
         })
 
         return (
             <div>
+                <div className="mb-3">
+                <div class={(this.props.message === '')? '' : 'alert alert-success'} role="alert">
+                    {this.props.message}
+                </div>
+                </div>
                 <table className="table">
                 <thead>
                     <tr>
@@ -74,6 +79,7 @@ class ViewEmployee extends Component {
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Salary</th>
+                    <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,7 +101,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onFetchEmployees: () => dispatch(actions.fetchEmployees())
+        onFetchEmployees: () => dispatch(actions.fetchEmployees()),
+        onDeleteEmployee: (id) => dispatch(actions.deleteEmployee(id))
     }
 }
 

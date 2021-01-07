@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import * as actions from '../actions/action'
 
-export default class AddEmployee extends Component {
+class AddEmployee extends Component {
 
 
     constructor(props) {
         super(props);
-        this.state = {message: ''}
+        // this.state = {message: ''}
         this.name = React.createRef();
         this.salary = React.createRef();
       }
@@ -15,24 +17,26 @@ export default class AddEmployee extends Component {
 
         console.log('A name was submitted: ' + this.name.current.value);
         console.log('A salary was submitted: ' + this.salary.current.value);
-        event.preventDefault();
+        
 
         let input = {name: this.name.current.value, salary: this.salary.current.value}; 
 
-        fetch('http://localhost:8080/api/employees/', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input)
-        })
-        .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                this.setState({message: data.text})
-            });
+        this.props.onAddEmployee(input);
+        event.preventDefault();
+        // fetch('http://localhost:8080/api/employees/', {
+        // method: 'POST', // or 'PUT'
+        // headers: {
+        //     'Content-Type': 'application/json',
+        // },
+        // body: JSON.stringify(input)
+        // })
+        // .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         this.setState({message: data.text})
+        //     });
 
-            console.log('finished')
+        //     console.log('finished')
     }
 
     render() {
@@ -40,9 +44,10 @@ export default class AddEmployee extends Component {
 
 
             <div>
+                <p>{this.props.employees}</p>
                 <div className="mb-3">
-                <div class={(this.state.message === '')? '' : 'alert alert-success'} role="alert">
-                    {this.state.message}
+                <div class={(this.props.message === '')? '' : 'alert alert-success'} role="alert">
+                    {this.props.message}
                 </div>
                 </div>
 
@@ -59,3 +64,20 @@ export default class AddEmployee extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        message: state.message,
+        // employees: state.employees
+    }
+}
+
+const mapDispatchToState = (dispatch) => {
+    return {
+        onAddEmployee: (payload) => dispatch(actions.addEmployee(payload))
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToState)(AddEmployee);
+// connect()

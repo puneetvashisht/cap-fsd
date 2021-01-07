@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +37,7 @@ import com.cpg.springbootdemo.repos.EmployeeRepo;
 
 class Message{
 	String text;
-	
+	List<Employee> employees;
 	
 
 	public Message(String text) {
@@ -50,6 +52,15 @@ class Message{
 	public void setText(String text) {
 		this.text = text;
 	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+	
 	
 	
 }
@@ -74,6 +85,20 @@ public class EmployeeController {
 	public List<Employee> fetchAllEmployees(){
 		return employeeRepo.findAll();
 	}
+	
+	
+	@DeleteMapping("/{id}")
+	public Message deleteEmployee(@PathVariable("id")int id){
+		 employeeRepo.deleteById(id);
+		 Message message = new Message("Employee successfully deleted!!");
+		 List<Employee> employees = employeeRepo.findAll();
+		 message.setEmployees(employees);
+		 
+		 return message;
+	}
+	
+	
+	
 	
 //	@GetMapping("/workoutactive")
 //	public List<Employee> assignWorkout(@RequestBody WorkoutActive workoutActive){
