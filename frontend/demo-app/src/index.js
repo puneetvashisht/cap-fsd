@@ -4,13 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore,applyMiddleware } from 'redux';
-import reducer from './store/reducer'
+// import reducer from './store/reducer'
+import reducer from "./store"
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-// 1. Create a store
-const store = createStore(reducer, applyMiddleware(thunk));
 
+
+const logger = (store) => (next) => (action) => {
+  console.log("Action fired", action);
+  next(action);
+}
+
+// 1. Create a store
+// const store = createStore(combinedReducer({
+//   employee: employeereducer,
+//     user: userreducer
+// }), applyMiddleware(thunk));
+const store = createStore(reducer, applyMiddleware(logger, thunk));
 
 // 3. Provide the store to react application
 ReactDOM.render(

@@ -1,19 +1,33 @@
 package com.cpg.springbootdemo;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.List;
 
-@Controller
-@RequestMapping("/test")
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin("*")
+@RequestMapping("/api/users")
 public class UserController {
 	
-	@GetMapping("/user")
-	public String getUser() {
-//		User user = new User("test@test", "testtest");
-		return "successtest";
-		
-		
+	
+	@Autowired
+	UserService userService;
+
+	@GetMapping("/")
+	public List<User> fetchAllEmployees(){
+		return userService.findAllUsers();
+	}
+	
+	
+	@PostMapping("/")
+	public void add(@RequestBody User user) {
+		userService.register(user);
 	}
 
 }

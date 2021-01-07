@@ -8,10 +8,10 @@ import * as actions from '../actions/action'
 
 class ViewEmployee extends Component {
 
-    constructor(props) {
-        super(props);
-        console.log('In constructor', props)
-      }
+    // constructor(props) {
+    //     super(props);
+    //     console.log('In constructor', props)
+    //   }
 
       componentDidMount() {
           console.log('Initialization code goes here..');
@@ -53,17 +53,27 @@ class ViewEmployee extends Component {
       
 
     render() {
-        let employeeList = this.props.employees.map((employee, i)=> {
-            return (
-                    <tr key={i}>
-                    <th scope="row">{i+1}</th>
-                    <td>{employee.id}</td>
-                    <td><Link to={'/viewdetail/' + employee.id}>{employee.name}</Link></td>
-                    <td>{employee.salary}</td>
-                    <td><button className="btn btn-danger" onClick={this.delete.bind(this, employee.id)}> X </button> </td>
-                    </tr>
-            )
-        })
+
+        // let employeeList = (
+        //     <tr>
+        //                 <th scope="row">No record found</th>
+        //     </tr>
+        // )
+        let employeeList = null;
+        if(this.props.employees){
+             employeeList = this.props.employees.map((employee, i)=> {
+                return (
+                        <tr key={i}>
+                        <th scope="row">{i+1}</th>
+                        <td>{employee.id}</td>
+                        <td><Link to={'/viewdetail/' + employee.id}>{employee.name}</Link></td>
+                        <td>{employee.salary}</td>
+                        <td><button className="btn btn-danger" onClick={this.delete.bind(this, employee.id)}> X </button> </td>
+                        </tr>
+                )
+            })
+        }
+        
 
         return (
             <div>
@@ -93,9 +103,10 @@ class ViewEmployee extends Component {
 
 
 const mapStateToProps = (state) => {
+    console.log('State is:: ', state)
     return {
-        message: state.message,
-        employees: state.employees
+        message: state.employee.message,
+        employees: state.employee.employees
     }
 }
 

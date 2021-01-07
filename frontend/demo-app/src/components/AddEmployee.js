@@ -51,6 +51,7 @@ class AddEmployee extends Component {
                 </div>
                 </div>
 
+
                 <div className="mb-3">
                     <label forname="exampleFormControlInput1" className="form-label">Name</label>
                     <input type="text" ref={this.name} className="form-control" id="exampleFormControlInput1" placeholder="Enter name" />
@@ -67,7 +68,7 @@ class AddEmployee extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        message: state.message,
+        message: state.employee.message,
         // employees: state.employees
     }
 }

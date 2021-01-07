@@ -1,9 +1,15 @@
 package com.cpg.springbootdemo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+
 
 @Entity
 public class User {
@@ -14,11 +20,27 @@ public class User {
 	
 	String email;
 	String password;
+	
+	
+	@ManyToOne(cascade = { CascadeType.ALL },fetch = FetchType.LAZY )
+//	@JoinColumn(name="Ur_Id" , referencedColumnName="role_id")
+	private Role role;
+	
 	public User() {
 		
 	}
 	
 	
+	public Role getRole() {
+		return role;
+	}
+
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+
 	public User(String email, String password) {
 		super();
 		this.email = email;

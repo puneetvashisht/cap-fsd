@@ -24,11 +24,11 @@ const reducer = function(state = initialState,  action){
             }
 
         case actionCreators.FETCH_EMPLOYEES:
-            console.log('fetch data from here');
-            let freshEmployees = [...action.payload]
+            console.log('fetch data from here', action);
+            let freshEmployees = action.payload;
             return {
                 employees: freshEmployees,
-                message: state.message
+                message: ''
             }
         case actionCreators.DELETE_EMPLOYEE:
                 console.log('in reducer delete method');
@@ -40,8 +40,10 @@ const reducer = function(state = initialState,  action){
                     message: action.payload.text,
                     employees: action.payload.employees
                 }
+        default:
+            return state;
     }
-    return state;
+    // return state;
 
 }
 
