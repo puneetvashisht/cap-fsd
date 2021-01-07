@@ -101,7 +101,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onFetchEmployees: () => dispatch(actions.fetchEmployees()),
+        onFetchEmployees: () => {
+            console.log('debug info')
+           return dispatch(actions.fetchEmployees())
+        },
         onDeleteEmployee: (id) => dispatch(actions.deleteEmployee(id))
     }
 }

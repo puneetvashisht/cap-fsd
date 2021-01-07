@@ -57,9 +57,9 @@ const findEmployee = (payload) => {
 
 export const fetchEmployees = () => {
     return dispatch => {
-        // fetch(baseUrl)
-        axios(baseUrl)
-            // .then(res => res.json())
+        fetch(baseUrl)
+        // axios(baseUrl)
+            .then(res => res.json())
             .then(res => dispatch(findEmployee(res.data)));
     }
 }
@@ -77,7 +77,7 @@ export const deleteEmployee = (id) => {
     return dispatch => {
         // fetch(baseUrl)
         console.log('axios delete...')
-        axios.delete(baseUrl + id)
+        axios.delete(baseUrl + 'id')
             // .then(res => res.json())
             .then(res =>{
                 console.log('After http response',  res.data)
