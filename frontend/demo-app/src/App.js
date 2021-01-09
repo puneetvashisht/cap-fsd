@@ -36,8 +36,8 @@ function App() {
           <Route  path="/viewusers">
             <ViewUsers></ViewUsers>
           </Route>
-          <Route path="/viewdetail/:id">
-            <ViewEmployeeDetail></ViewEmployeeDetail>
+          <Route exact path="/viewdetail/:title" component={ViewEmployeeDetail}>
+            {/* <ViewEmployeeDetail></ViewEmployeeDetail> */}
           </Route>
           <Route path="/add">
             <AddEmployee></AddEmployee>

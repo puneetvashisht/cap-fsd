@@ -1,19 +1,28 @@
 package com.cpg.springbootdemo;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+
 
 
 
 @Entity
-public class User {
+public class User implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
@@ -22,23 +31,31 @@ public class User {
 	String password;
 	
 	
-	@ManyToOne(cascade = { CascadeType.ALL },fetch = FetchType.LAZY )
-//	@JoinColumn(name="Ur_Id" , referencedColumnName="role_id")
-	private Role role;
+	@OneToMany(cascade = { CascadeType.ALL },fetch = FetchType.LAZY )
+	private List<Role> roles;
 	
 	public User() {
 		
 	}
 	
 	
-	public Role getRole() {
-		return role;
+
+
+
+	public List<Role> getRoles() {
+		return roles;
 	}
 
 
-	public void setRole(Role role) {
-		this.role = role;
+
+
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
+
+
+
 
 
 	public User(String email, String password) {

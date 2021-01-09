@@ -1,6 +1,9 @@
 package com.cpg.springbootdemo;
 
 import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +48,14 @@ public class UserService {
 //		repo.dele
 	
 
+	}
+
+
+//	@Transactional
+	public User fetchEmployeeById(int id) {
+		Optional<User> user = repo.findById(id);
+//		user.setRole(user.getRole());
+		return user.get(); 
 	}
 
 }

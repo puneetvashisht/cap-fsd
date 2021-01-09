@@ -34,7 +34,13 @@ class ViewEmployee extends Component {
 
       delete(id){
           console.log('delete employee with id: ' + id)
+        
+        //   asynch
         this.props.onDeleteEmployee(id);
+
+
+        this.props.history.push('/view');
+        
         // fetch('http://localhost:8080/api/employees/' + id, {
         // method: 'DELETE', // or 'PUT'
         // headers: {
