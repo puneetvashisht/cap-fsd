@@ -8,7 +8,7 @@ public class FileReadDemo {
 
 	public static void main(String[] args) {
 		
-		File file = new File("/Users/puneet/work/trainings/cagemini-fsd/java-demo/src/sample.txt");
+		File file = new File("/home/puneet/work/trainings/cagemini-fsd/java-demo/src/sample.txt");
 		Scanner scanner = null;
 		
 //		scanner = new Scanner(file);

@@ -38,19 +38,32 @@ public class Employee {
 
 
 	public Employee() {
-		super();
+		
 	}
 
+	public Employee(int id, String name) {
 
-	public Employee(int id, String name, double salary) {
-		super();
 		this.id = id;
 		this.name = name;
+	}
+	
+
+	public Employee(int id, String name, double salary) {
+//		super();
+		this(id,name);
+//		super(id, name);
 		this.salary = salary;
 	}
 
+	public void incrementSalary() {
+		this.salary *= 1.1; 
+	}
 	
-	public void incrementSalary(int amount) {
+//	public double incrementSalary() {
+//		return this.salary *= 1.1; 
+//	}
+	
+	public final void incrementSalary(int amount) {
 		this.salary += amount;
 	}
 

@@ -17,7 +17,8 @@ public class TestInheritance {
 		for(Employee emp : employees) {
 			System.out.println(emp);
 			
-			emp.incrementSalary(5000);
+//			emp.incrementSalary(5000);
+			emp.incrementSalary();
 			if(emp  instanceof Manager) {
 				Manager manager = (Manager) emp;
 				manager.approveLeaves();
