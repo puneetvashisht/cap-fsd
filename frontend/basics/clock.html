@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Clock</title>
+</head>
+<body onload="tick()">
+    <a href="test.html">Go to Test</a>
+    <div id="clock">
+
+    </div>
+
+    <script>
+
+        function tick(){
+
+            setInterval(()=>{
+                var today = new Date();
+            var para = "<p>" + today.getHours() +  " : " + today.getMinutes() +  " : " + today.getSeconds() +  "</p>";
+            document.getElementById('clock').innerHTML = para;
+            }, 1000);
+
+           
+        }
+
+    </script>
+</body>
+</html>

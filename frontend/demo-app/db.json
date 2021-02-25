@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "password": "typicode"
+    },
+    {
+      "name": "json-serve2r",
+      "password": "typicode2",
+      "id": 2
+    }
+  ],
+  "login": {
+    "auth": false
+  },
+  "profile": {
+    "name": "typicode"
+  }
+}

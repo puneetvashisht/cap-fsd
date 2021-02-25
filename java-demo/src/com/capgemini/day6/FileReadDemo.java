@@ -2,7 +2,10 @@ package com.capgemini.day6;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.capgemini.day5.Employee;
 
 public class FileReadDemo {
 

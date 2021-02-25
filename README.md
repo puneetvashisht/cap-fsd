@@ -42,3 +42,17 @@
             Overriding - run time resolution
             Abstract classes - contains zero or more abstract methods
             @Override - check method signature
+    - Day 5
+            Exceptions
+            Checked (Exception) & Unchecked(RuntimeException)
+            try, catch, finally, throw, throws
+            multiple catch first | second  
+            try with resource
+                 
+    - JPA
+        Get required dependencies
+                Hibernate JPA
+                MySql Connector
+        Class convert into Entity
+        persistence.xml -- configuration file
+            

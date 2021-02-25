@@ -1,0 +1,13 @@
+    /* element selector */
+    p{
+
+    }
+    
+     /* unique id selector */
+    #borderblack {
+        border: 1px solid black;
+    }    
+     /* class based  */
+    .colorred {
+        color: red;
+    }
