@@ -24,6 +24,9 @@ componentDidMount(){
 
 back(){
   console.log('back...')
+
+  // fetch();
+
   this.props.history.push('/add');
 
 }
@@ -34,7 +37,7 @@ back(){
       <div>
         {/* <h3>ID: {ownProps.match.params.title}</h3> */}
         <h3>ID: {this.props.id}</h3>
-
+        <input type="text" name="userid" value={this.props.id} disabled/>
         <button className="btn btn-secondry" onClick={this.back.bind(this)}>Go Back</button>
       </div>
     );

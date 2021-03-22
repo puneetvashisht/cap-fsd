@@ -56,6 +56,11 @@ class ViewEmployee extends Component {
         //     });
 
       }
+
+      handleChange(event){
+          console.log(event.target.value);
+          this.props.onFilterEmployee(event.target.value);
+      }
       
 
     render() {
@@ -87,6 +92,9 @@ class ViewEmployee extends Component {
                 <div class={(this.props.message === '')? '' : 'alert alert-success'} role="alert">
                     {this.props.message}
                 </div>
+                </div>
+                <div className="mb-3">
+                <input type="search" onChange={this.handleChange.bind(this)} className="form-control" placeholder="Search By Name" />
                 </div>
                 <table className="table">
                 <thead>
@@ -122,7 +130,9 @@ const mapDispatchToProps = (dispatch) => {
             console.log('debug info')
            return dispatch(actions.fetchEmployees())
         },
-        onDeleteEmployee: (id) => dispatch(actions.deleteEmployee(id))
+        onDeleteEmployee: (id) => dispatch(actions.deleteEmployee(id)),
+        onFilterEmployee: (text) => dispatch(actions.filterEmployee(text))
+
     }
 }
 

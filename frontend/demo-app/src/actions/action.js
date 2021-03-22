@@ -3,6 +3,7 @@ import axios from 'axios';
 export const ADD_EMPLOYEE = 'ADD_EMPLOYEE'
 export const FETCH_EMPLOYEES = 'FETCH_EMPLOYEES'
 export const DELETE_EMPLOYEE = 'DELETE_EMPLOYEE'
+export const FILTER_EMPLOYEE = 'FILTER_EMPLOYEE'
 
 
 
@@ -56,6 +57,7 @@ const findEmployee = (payload) => {
 }
 
 export const fetchEmployees = () => {
+
     return dispatch => {
         // fetch(baseUrl)
         axios(baseUrl)
@@ -84,6 +86,14 @@ export const deleteEmployee = (id) => {
                 dispatch(removeEmployee(res.data))
             }  );
     }
+}
+
+
+export const filterEmployee = (payload) => {    
+    return {
+        type: FILTER_EMPLOYEE,
+        payload
+    };
 }
 
 

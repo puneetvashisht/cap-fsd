@@ -40,6 +40,16 @@ const reducer = function(state = initialState,  action){
                     message: action.payload.text,
                     employees: action.payload.employees
                 }
+        case actionCreators.FILTER_EMPLOYEE:
+                    // console.log('in reducer delete method');
+                    let employeesList = [...state.employees];
+                
+                    console.log('**** in reducer', employeesList);
+                    console.log('**** in reducer', action.payload);
+                    let filteredList = employeesList.filter((employee)=> employee.name.includes(action.payload));
+                    return {
+                        employees: filteredList
+                    }
         default:
             return state;
     }

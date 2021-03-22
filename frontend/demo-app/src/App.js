@@ -10,6 +10,8 @@ import ViewEmployee from './components/ViewEmployee';
 import AddEmployee from './components/AddEmployee';
 import ViewEmployeeDetail from './components/ViewEmployeeDetail';
 import ViewUsers from './components/ViewUsers';
+import Login from './components/Login';
+import NameForm from './components/NameForm';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Link className="nav-link active" to="/view">View Employees</Link>
         <Link className="nav-link active" to="/add">Add Employees</Link>
         <Link className="nav-link active" to="/viewusers">View Users</Link>
+        <Link className="nav-link active" to="/login">Login</Link>
+        <Link className="nav-link active" to="/nameform">Controlled Comp</Link>
        
     </nav>
     <hr/>
@@ -41,6 +45,12 @@ function App() {
           </Route>
           <Route path="/add">
             <AddEmployee></AddEmployee>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/nameform">
+            <NameForm></NameForm>
           </Route>
           <Route exact path="/">
             <Home />
